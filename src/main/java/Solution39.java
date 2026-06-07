@@ -21,9 +21,8 @@ public class Solution39 {
       }
 
       current.add(candidates[i]);
-      // Reuse the same element by passing i (not i + 1) as the next start.
       backtrack(candidates, remaining - candidates[i], i, current, result);
-      current.remove(current.size() - 1);
+      current.removeLast();
     }
   }
 }
