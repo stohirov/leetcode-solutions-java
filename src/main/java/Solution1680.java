@@ -1,0 +1,14 @@
+public class Solution1680 {
+  public int concatenatedBinary(int n) {
+    final int MOD = 1_000_000_007;
+    long result = 0;
+    int length = 0;
+    for (int i = 1; i <= n; i++) {
+      if ((i & (i - 1)) == 0) {
+        length++;
+      }
+      result = ((result << length) % MOD + i) % MOD;
+    }
+    return (int) result;
+  }
+}
